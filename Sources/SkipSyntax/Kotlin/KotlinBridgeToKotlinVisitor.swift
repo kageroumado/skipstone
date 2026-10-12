@@ -1186,7 +1186,7 @@ final class KotlinBridgeToKotlinVisitor {
                 default:
                     releaseBody.append("Swift_peer.release(as: SwiftValueTypeBox<\(classDeclaration.signature)>.self)")
                 }
-                cdeclFunctions.append(CDeclFunction(name: releaseCdecl.cdeclFunctionName, cdecl: releaseCdecl.cdecl, signature: .function([classType.peerSwiftParameter], .void, APIFlags(), nil), body: releaseBody))
+                cdeclFunctions.append(CDeclFunction(name: releaseCdecl.cdeclFunctionName, cdecl: releaseCdecl.cdecl, signature: .function([classType.peerSwiftParameter], .void, APIFlags(), nil), body: releaseBody, isNonisolated: true))
             }
         }
 
