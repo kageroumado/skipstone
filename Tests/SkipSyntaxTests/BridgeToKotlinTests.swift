@@ -9631,7 +9631,7 @@ final class BridgeToKotlinTests: XCTestCase {
         // (either manually or through the synthesized Bundle.module property),
         // which forwards the bundle access up to the Android asset manager
         extension AndroidBundle {
-            convenience init?(path: String, unusedp_0: Void? = nil) {
+            nonisolated convenience init?(path: String, unusedp_0: Void? = nil) {
                 self.init(path: path, moduleName: "") {
                     try! AnyDynamicObject(className: ".module._ModuleBundleAccessor_").moduleBundle!
                 }
@@ -9645,7 +9645,7 @@ final class BridgeToKotlinTests: XCTestCase {
         // up to the Android asset manager (this only uses API that is also present in older SkipAndroidBridge
         // versions, where AndroidBundle.init(for:) is an exact match that takes precedence over this interceptor)
         extension AndroidBundle {
-            convenience init(for aClass: AnyClass, unusedp_0: Void? = nil) {
+            nonisolated convenience init(for aClass: AnyClass, unusedp_0: Void? = nil) {
                 // without a JVM there is no Kotlin module bundle, so back the bundle with the native main bundle
                 let path = isJNIInitialized ? AndroidBundle.main.bundlePath + "/_.resources" : Foundation.Bundle.main.bundlePath
                 self.init(path: path, moduleName: "", moduleBundle: {
