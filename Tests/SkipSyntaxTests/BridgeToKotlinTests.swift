@@ -6778,7 +6778,7 @@ final class BridgeToKotlinTests: XCTestCase {
                 return typeErased
             }
         }
-        private final class C_TypeErased : @unchecked Sendable {
+        nonisolated private final class C_TypeErased : @unchecked Sendable {
             let genericvalue: Any
             let genericptr: SwiftObjectPointer
             init(_ value: AnyObject) {
@@ -7004,7 +7004,7 @@ final class BridgeToKotlinTests: XCTestCase {
                 return typeErased
             }
         }
-        private final class S_TypeErased : @unchecked Sendable {
+        nonisolated private final class S_TypeErased : @unchecked Sendable {
             var genericvalue: Any
             init(_ value: Any) {
                 self.genericvalue = value
@@ -7153,7 +7153,7 @@ final class BridgeToKotlinTests: XCTestCase {
                 return typeErased
             }
         }
-        private final class E_TypeErased : @unchecked Sendable {
+        nonisolated private final class E_TypeErased : @unchecked Sendable {
             let genericvalue: Any
             init(_ value: Any) {
                 self.genericvalue = value
@@ -7385,7 +7385,7 @@ final class BridgeToKotlinTests: XCTestCase {
                 return typeErased
             }
         }
-        private final class C_TypeErased : @unchecked Sendable {
+        nonisolated private final class C_TypeErased : @unchecked Sendable {
             let genericvalue: Any
             let genericptr: SwiftObjectPointer
             init(_ value: AnyObject) {
@@ -7968,7 +7968,7 @@ final class BridgeToKotlinTests: XCTestCase {
                 return typeErased
             }
         }
-        private final class V_TypeErased : @unchecked Sendable {
+        nonisolated private final class V_TypeErased : @unchecked Sendable {
             let genericvalue: Any
             init(_ value: Any) {
                 self.genericvalue = value
@@ -8287,7 +8287,7 @@ final class BridgeToKotlinTests: XCTestCase {
                 return typeErased
             }
         }
-        private final class E_TypeErased : @unchecked Sendable {
+        nonisolated private final class E_TypeErased : @unchecked Sendable {
             let genericvalue: Any
             init(_ value: Any) {
                 self.genericvalue = value
@@ -8931,7 +8931,7 @@ final class BridgeToKotlinTests: XCTestCase {
                 return typeErased
             }
         }
-        private final class VM_TypeErased : @unchecked Sendable {
+        nonisolated private final class VM_TypeErased : @unchecked Sendable {
             let genericvalue: Any
             init(_ value: Any) {
                 self.genericvalue = value

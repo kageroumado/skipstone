@@ -1414,7 +1414,9 @@ final class KotlinBridgeToKotlinVisitor {
         swift.append(1, "}")
         swift.append("}")
 
-        swift.append("private final class \(classDeclaration.signature.typeErasedClass) : @unchecked Sendable {")
+        // Explicitly nonisolated: under `.defaultIsolation(MainActor.self)` a bare class here would be
+        // main-actor-bound, and `toTypeErased()` above constructs it from a nonisolated context.
+        swift.append("nonisolated private final class \(classDeclaration.signature.typeErasedClass) : @unchecked Sendable {")
         if classDeclaration.inherits.contains(.named("MutableStruct", [])) {
             swift.append(1, "var genericvalue: Any")
         } else {
